@@ -1,0 +1,191 @@
+<?php
+
+namespace ScolariteBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Groupe
+ *
+ * @ORM\Table(name="groupe")
+ * @ORM\Entity(repositoryClass="ScolariteBundle\Repository\GroupeRepository")
+ */
+class Groupe
+{
+    /**
+     * @var int
+     *
+     * @ORM\Column(name="Id_Groupe", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="AUTO")
+     */
+    private $Id_Groupe;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="Nom_Groupe", type="string", length=255)
+     */
+    private $nomGroupe;
+
+    /**
+     * @var int
+     *
+     * @ORM\Column(name="Nbr_Enfant_Groupe", type="integer")
+     */
+    private $nbrEnfantGroupe;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="Enseignant_Groupe", type="string", length=255)
+     */
+    private $enseignantGroupe;
+
+    /**
+     * @var int
+     *
+     * @ORM\Column(name="Age_Groupe", type="integer")
+     */
+    private $ageGroupe;
+
+    /**
+     * @return int
+     */
+    public function getIdGroupe()
+    {
+        return $this->Id_Groupe;
+    }
+
+    /**
+     * @param int $Id_Groupe
+     */
+    public function setIdGroupe($Id_Groupe)
+    {
+        $this->Id_Groupe = $Id_Groupe;
+    }
+
+    /**
+     * @var ArrayCollection Matiere $Matieres 
+     * @ORM\ManyToOne(targetEntity="Matiere" , inversedBy="groupes" , cascade={"persist","merge"} )
+     * @ORM\JoinTable( name="groupemat",
+     * joinColumns={@ORM\JoinColumn(name="id_groupe", referencedColumnName="Id_Groupe")} ,
+     * inverseJoinColumns={@ORM\JoinColumn(name="id_matiere", referencedColumnName="Id_Matiere") })
+     * 
+     */
+    private $Matieres;
+
+    /**
+     * @return mixed
+     */
+    public function getMatiere()
+    {
+        return $this->Matiere;
+    }
+
+    /**
+     * @param mixed $Matiere
+     */
+    public function setMatiere($Matiere)
+    {
+        $this->Matiere = $Matiere;
+    }
+
+
+    /**
+     * Set nomGroupe
+     *
+     * @param string $nomGroupe
+     *
+     * @return Groupe
+     */
+    public function setNomGroupe($nomGroupe)
+    {
+        $this->nomGroupe = $nomGroupe;
+
+        return $this;
+    }
+
+    /**
+     * Get nomGroupe
+     *
+     * @return string
+     */
+    public function getNomGroupe()
+    {
+        return $this->nomGroupe;
+    }
+
+    /**
+     * Set nbrEnfantGroupe
+     *
+     * @param integer $nbrEnfantGroupe
+     *
+     * @return Groupe
+     */
+    public function setNbrEnfantGroupe($nbrEnfantGroupe)
+    {
+        $this->nbrEnfantGroupe = $nbrEnfantGroupe;
+
+        return $this;
+    }
+
+    /**
+     * Get nbrEnfantGroupe
+     *
+     * @return int
+     */
+    public function getNbrEnfantGroupe()
+    {
+        return $this->nbrEnfantGroupe;
+    }
+
+    /**
+     * Set enseignantGroupe
+     *
+     * @param string $enseignantGroupe
+     *
+     * @return Groupe
+     */
+    public function setEnseignantGroupe($enseignantGroupe)
+    {
+        $this->enseignantGroupe = $enseignantGroupe;
+
+        return $this;
+    }
+
+    /**
+     * Get enseignantGroupe
+     *
+     * @return string
+     */
+    public function getEnseignantGroupe()
+    {
+        return $this->enseignantGroupe;
+    }
+
+    /**
+     * Set ageGroupe
+     *
+     * @param integer $ageGroupe
+     *
+     * @return Groupe
+     */
+    public function setAgeGroupe($ageGroupe)
+    {
+        $this->ageGroupe = $ageGroupe;
+
+        return $this;
+    }
+
+    /**
+     * Get ageGroupe
+     *
+     * @return int
+     */
+    public function getAgeGroupe()
+    {
+        return $this->ageGroupe;
+    }
+}
+

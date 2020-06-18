@@ -1,0 +1,8 @@
+# config/packages/artox_lab_sms.yaml
+artox_lab_sms:
+    providers:
+        lets_ads_provider_doc: # your custom provider name
+            lets_ads:
+                login: '+21692045389'
+                password: '0123456789'
+                sender: 'testone'

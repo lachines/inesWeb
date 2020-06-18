@@ -1,0 +1,141 @@
+scolarite_homepage:
+    path:     /
+    defaults: { _controller: ScolariteBundle:Default:index }
+
+scolariteajoutGroupe:
+    path:     /ajoutGroupe
+    defaults: { _controller: ScolariteBundle:Groupe:ajoutGroupe }
+
+
+scolariteafficheGroupe:
+    path:     /afficheGroupe
+    defaults: { _controller: ScolariteBundle:Groupe:AfficheGroupe }
+
+scolaritesupprimerGroupe:
+    path:     /supprimerGroupe/{IdGroupe}
+    defaults: { _controller: ScolariteBundle:Groupe:SupprimerGroupe }
+
+scolaritemodifierGroupe:
+    path:     /modifierGroupe/{IdGroupe}
+    defaults: { _controller: ScolariteBundle:Groupe:ModifierGroupe }
+
+
+
+scolariteajoutMatiere:
+    path:     /ajoutMatiere
+    defaults: { _controller: ScolariteBundle:Matiere:ajoutMatiere }
+
+scolariteafficheMatiere:
+    path:     /afficheMatiere
+    defaults: { _controller: ScolariteBundle:Matiere:AfficheMatiere }
+
+
+scolaritesupprimerMatiere:
+    path:     /supprimerMatiere/{IdMatiere}
+    defaults: { _controller: ScolariteBundle:Matiere:SupprimerMatiere }
+
+
+scolaritemodifierMatiere:
+    path:     /modifierMatiere/{IdMatiere}
+    defaults: { _controller: ScolariteBundle:Matiere:ModifierMatiere }
+
+
+
+scolariteajoutTab_demande:
+    path:     /ajoutTab_demande
+    defaults: { _controller: ScolariteBundle:Tab_demande:ajoutTab_demande }
+
+
+scolariteafficheTab_demande:
+    path:     /afficheTab_demande
+    defaults: { _controller: ScolariteBundle:Tab_demande:AfficheTab_demande }
+
+scolariteAfficheQuiz:
+    path:     /{id}/quiz
+    defaults: { _controller: ScolariteBundle:Tab_demande:AfficheQuiz }
+
+scolariteQuizSend:
+    path:     /quizsend
+    defaults: { _controller: ScolariteBundle:Tab_demande:QuizSend }
+    methods : [POST]
+
+scolariteafficheDemandeAdmin:
+    path:     /afficheDemandeAdmin
+    defaults: { _controller: ScolariteBundle:Tab_demande:afficheDemandeAdmin }
+scolariteafficheDemandeRAdmin:
+    path:     /afficheDemandeRAdmin
+    defaults: { _controller: ScolariteBundle:Tab_demande:afficheDemandeRAdmin }
+scolariteafficheDemandeAAdmin:
+    path:     /afficheDemandeAAdmin
+    defaults: { _controller: ScolariteBundle:Tab_demande:afficheDemandeAAdmin }
+
+scolariteaccepterDemandeAdmin:
+    path:     /accepterDemandeAdmin/{id}
+    defaults: { _controller: ScolariteBundle:Tab_demande:accepterDemandeAdmin }
+scolariterefuserDemandeAdmin:
+    path:     /refuserDemandeAdmin/{id}
+    defaults: { _controller: ScolariteBundle:Tab_demande:refuserDemandeAdmin }
+
+scolariteGM:
+    path:     /add/gm/{id}
+    defaults: { _controller: ScolariteBundle:Groupe:addgm }
+    methods : [POST]
+scolariteremoveGM:
+    path:     /delete/gm/{id}
+    defaults: { _controller: ScolariteBundle:Groupe:removegm }
+
+scolariteSearchMatiere:
+    path:     /searchmatiere
+    defaults: { _controller: ScolariteBundle:Matiere:search }
+    methods : [POST]
+
+scolariteTriMatiere:
+    path:     /trimatiere
+    defaults: { _controller: ScolariteBundle:Matiere:tri }
+    methods : [POST]
+
+scolariteSearchGroupe:
+    path:     /searchgroupe
+    defaults: { _controller: ScolariteBundle:Groupe:search }
+    methods : [POST]
+
+scolariteTriGroupe:
+    path:     /trigroupe
+    defaults: { _controller: ScolariteBundle:Groupe:tri }
+    methods : [POST]
+scolaritePrint:
+    path:     /print
+    defaults: { _controller: ScolariteBundle:Matiere:print }
+    
+scolariteSearchDemande:
+    path:     /searchgroupe
+    defaults: { _controller: ScolariteBundle:Tab_demande:search }
+    methods : [POST]
+
+scolariteTriDemande:
+    path:     /tritabdemande
+    defaults: { _controller: ScolariteBundle:Tab_demande:tri }
+    methods : [POST]
+
+scolariteafficheEnseignant:
+    path:     /afficheEnseignant
+    defaults: { _controller: ScolariteBundle:Enseignant:AfficheEnseignant }
+
+scolaritesupprimerEnseignant:
+    path:     /supprimerEnseigant/{IdEnseignant}
+    defaults: { _controller: ScolariteBundle:Enseignant:SupprimerEnseignant }
+
+event_affichageMobile:
+    path:    /affichageMobile
+    defaults: { _controller: ScolariteBundle:Matiere:affichageMobile }
+
+event_newDemande:
+    path:    /newDemande
+    defaults: { _controller: ScolariteBundle:Tab_demande:newDemande }
+
+event_findMobile:
+    path:    /findMobile/{str}
+    defaults: { _controller: ScolariteBundle:Matiere:findMobile }
+trii:
+    path:     /tasks/trii
+    defaults: { _controller: ScolariteBundle:Matiere:trii }
